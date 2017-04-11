@@ -8,5 +8,6 @@ ADD ci ci
 RUN bash -c 'source activate $CONDA_DEFAULT_ENV \
     && pip install cython'
 RUN bash -c 'source activate $CONDA_DEFAULT_ENV \
-    && mkdir /notebooks
+    && mkdir /notebooks'
 CMD ./ci/start_jupyter.sh
+EXPOSE 8888

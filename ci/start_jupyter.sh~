@@ -20,6 +20,8 @@ if [ "$INSTALL_PIP_MODULES" != "" ] ; then
 	pip install $INSTALL_PIP_MODULES
 fi
 
+pip install jupyterhub==0.6.1 notebook==4.0
+
 if [ "$JPY_API_TOKEN" != "" ] ; then
 	echo "Starting under Jupyterhub"
 
