@@ -1,4 +1,5 @@
-#!/home/igor/anaconda3/envs/everware-2/bin/python
+#!/opt/conda/bin/python
+
 
 from jupyterhub.singleuser import main
 
