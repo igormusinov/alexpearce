@@ -11,5 +11,4 @@ RUN bash -c 'source activate $CONDA_DEFAULT_ENV \
     && mkdir /notebooks'
 RUN bash -c 'pip install jupyterhub notebook'
 RUN bash -c 'apt-get update && apt-get -y install ca-certificates sudo'
-USER root
 ENTRYPOINT "/work/ci/start_jupyter.sh"
