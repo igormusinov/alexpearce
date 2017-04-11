@@ -20,23 +20,6 @@ if [ "$INSTALL_PIP_MODULES" != "" ] ; then
 	pip install $INSTALL_PIP_MODULES
 fi
 
-if ! which conda ; then
-    echo "installing miniconda root environment with jupyterhub"
-    MINICONDA_FILE="Miniconda3-3.19.0-Linux-x86_64.sh"
-    wget http://repo.continuum.io/miniconda/$MINICONDA_FILE -O miniconda.sh
-    chmod +x miniconda.sh
-    ./miniconda.sh -b -p $HOME/miniconda || throw_error "Error installing miniconda"
-    rm ./miniconda.sh
-    export PATH=$HOME/miniconda/bin:$PATH
-    hash -r
-    conda update --yes conda
-    pip install jupyterhub notebook==4.0
-    # cleaning root environment
-    conda clean --yes --all
-
-    [ -f $HOME/miniconda/bin/jupyterhub-singleuser ] || throw_error "jupyterhub inaccessible using standard path"
-fi
-
 if [ "$JPY_API_TOKEN" != "" ] ; then
 	echo "Starting under Jupyterhub"
 
@@ -46,7 +29,7 @@ if [ "$JPY_API_TOKEN" != "" ] ; then
 	rm -rf ${NOTEBOOK_DIR}
 	git clone ${JPY_GITHUBURL} ${NOTEBOOK_DIR}
 
-	$HOME/miniconda/bin/jupyterhub-singleuser \
+	./jupyterhub-singleuser \
 	  --port=8888 \
 	  --ip=0.0.0.0 \
 	  --user=$JPY_USER \

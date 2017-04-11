@@ -29,7 +29,7 @@ if [ "$JPY_API_TOKEN" != "" ] ; then
 	rm -rf ${NOTEBOOK_DIR}
 	git clone ${JPY_GITHUBURL} ${NOTEBOOK_DIR}
 
-	./jupyterhub-singleuser \
+	./ci/jupyterhub-singleuser \
 	  --port=8888 \
 	  --ip=0.0.0.0 \
 	  --user=$JPY_USER \
