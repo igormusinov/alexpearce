@@ -1,0 +1,6 @@
+#!/home/igor/anaconda3/envs/everware-2/bin/python
+
+from jupyterhub.singleuser import main
+
+if __name__ == '__main__':
+    main()

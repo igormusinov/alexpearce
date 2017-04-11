@@ -10,4 +10,3 @@ RUN bash -c 'source activate $CONDA_DEFAULT_ENV \
 RUN bash -c 'source activate $CONDA_DEFAULT_ENV \
     && mkdir /notebooks'
 CMD ./ci/start_jupyter.sh
-EXPOSE 8888
