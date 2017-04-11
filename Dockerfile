@@ -9,4 +9,4 @@ RUN bash -c 'source activate $CONDA_DEFAULT_ENV \
     && pip install cython'
 RUN bash -c 'source activate $CONDA_DEFAULT_ENV \
     && mkdir /notebooks'
-CMD source activate $CONDA_DEFAULT_ENV && conda./ci/start_jupyter.sh
+CMD source activate $CONDA_DEFAULT_ENV && ./ci/start_jupyter.sh
